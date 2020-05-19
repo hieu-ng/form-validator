@@ -28,21 +28,9 @@ function checkEmail(input) {
 form.addEventListener('submit', function (e) {
 	e.preventDefault();
 
-	if (username.value === '') {
-		showError(username, 'Username is required');
-	} else {
-		showSuccess(username);
-	}
-
-	if (email.value === '') {
-		showError(email, 'Username is required');
-	} else {
-		showSuccess(email);
-	}
-
-	if (password.value === '') {
-		showError(password, 'Username is required');
-	} else {
-		showSuccess(password);
-	}
+	checkRequired([username, email, password, password2]);
+	checkLength(username, 3, 15);
+	checkLength(password, 6, 25);
+	checkEmail(email);
+	checkPasswordsMatch(password, password2);
 });
