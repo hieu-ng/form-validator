@@ -47,6 +47,10 @@ function checkPasswordsMatch(input1, input2) {
 	}
 }
 
+function getFieldName(input) {
+	return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+}
+
 form.addEventListener('submit', function (e) {
 	e.preventDefault();
 
